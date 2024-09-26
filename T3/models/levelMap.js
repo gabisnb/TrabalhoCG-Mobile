@@ -54,7 +54,7 @@ export class Wall{
  * @param {THREE.Scene} scene scene of the level
  * @returns walls of the level with their bounding boxes and their normal vectors
  */
-export function levelMap(width, height, matrix, scene, textureInfo = {wallColor: 'rgb(80, 80, 90)', wallTexture: './assets/wall.jpeg', floorColor: 'brown', floorTexture: './assets/woodFloor.jpg', repeatU: width, repeatV: height})
+export function levelMap(width, height, matrix, scene, textureInfo = {wallColor: 'rgb(80, 80, 90)', wallTexture: './T3/assets/wall.jpeg', floorColor: 'brown', floorTexture: './T3/assets/woodFloor.jpg', repeatU: width, repeatV: height})
 {
   // Creating the ground plane
   let plane = createGroundPlaneXZ(width, height);

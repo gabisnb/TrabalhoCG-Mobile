@@ -25,7 +25,7 @@ export class Tank
     // Parameters
     let parent = new THREE.Object3D();
     let loader = new GLTFLoader();
-    loader.load('./assets/toon_tank.glb',
+    loader.load('./T3/assets/toon_tank.glb',
         function ( gltf ) {
             let obj = gltf.scene;
             obj.traverse( function(child) {

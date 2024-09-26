@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { OrbitControls } from "../../build/jsm/controls/OrbitControls.js";
+import { OrbitControls } from "../build/jsm/controls/OrbitControls.js";
 import KeyboardState from "../../libs/util/KeyboardState.js";
 import {CubeTextureLoaderSingleFile} from "../../libs/util/CubeTextureLoaderSingleFile.js";
 import {
@@ -35,13 +35,13 @@ var player;
 var secondaryBox = new SecondaryBox();
 secondaryBox.hide();
 
-var skybox = new CubeTextureLoaderSingleFile().loadSingle('./assets/skybox.png', 1);
+var skybox = new CubeTextureLoaderSingleFile().loadSingle('./T3/assets/skybox.png', 1);
 
 
 // audio
 const listener = new THREE.AudioListener();
 camera.add(listener);
-var audios = setup_audio(listener, "assets/sound/");
+var audios = setup_audio(listener, "./T3/assets/sound/");
 audios.play_sounds = true;
 
 // var level_attributes = {

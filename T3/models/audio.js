@@ -6,7 +6,7 @@ export function setup_audio(listener, path)
     
     // background music
     const music = new THREE.Audio(listener);
-    audio_loader.load('assets/sound/musicBackground.wav', function( buffer ) {
+    audio_loader.load('./T3/assets/sound/musicBackground.wav', function( buffer ) {
     music.setBuffer(buffer);
     music.setLoop(true);
     music.setVolume(0.5);
@@ -31,7 +31,7 @@ export function setup_audio(listener, path)
 
     // shot shoot
     const shot_shoot = new THREE.Audio(listener);
-    audio_loader.load('assets/sound/shot.wav', function( buffer ) {
+    audio_loader.load('./T3/assets/sound/shot.wav', function( buffer ) {
     shot_shoot.setBuffer(buffer);
     shot_shoot.setLoop(false);
     shot_shoot.setVolume(0.35);
