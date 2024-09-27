@@ -105,11 +105,11 @@ export function reset_level3(scene)
 
   let textureInfo = {
     wallColor: 'darkgrey',
-    wallTexture: './assets/coloredBricks.avif',
+    wallTexture: './T3/assets/coloredBricks.avif',
     movingWallsColor: 'darkgrey',
-    movingWallsTexture: './assets/movingWalls.jpg',
+    movingWallsTexture: './T3/assets/movingWalls.jpg',
     floorColor: 'brown',
-    floorTexture: './assets/stoneFloor.avif',
+    floorTexture: './T3/assets/stoneFloor.avif',
     repeatU: 1,
     repeatV: 1
   }

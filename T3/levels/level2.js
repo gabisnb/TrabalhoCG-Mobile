@@ -122,9 +122,9 @@ export function reset_level2(scene)
   // Create walls of the level
   let textureInfo = {
     wallColor: 'red',
-    wallTexture: "./assets/brickWall.jpg",
+    wallTexture: "./T3/assets/brickWall.jpg",
     floorColor: 'black',
-    floorTexture: './assets/metalFloor.jpg',
+    floorTexture: './T3/assets/metalFloor.jpg',
     repeatU: width,
     repeatV: height
   }
