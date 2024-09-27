@@ -22,7 +22,7 @@ camera = initCamera(camInitial);
 orbit = new OrbitControls(camera, renderer.domElement);
 var keyboard = new KeyboardState();
 var level = 1;
-export var isMobile = false;
+export var isMobile = true;
 export var mobileInfo = {
   fwdValue: 0,
   bkdValue: 0,
