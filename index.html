@@ -1,47 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>CG</title>
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="html/resources/main.css">
-	</head>
-	<body>
+<html>
+   <head>
+      <title>Tank Game</title>
 
-      
-		<script>
-			function openWelcomePage()
-			{
-				iframe.src = "./game.html";
-				document.body.appendChild(iframe);
-			}
-		</script>
+      <link rel="shortcut icon" href="./favicon.ico">
+      <link rel="stylesheet" href="./html/resources/default.css">
+      <link rel="stylesheet" href="./T3/lifebar.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">  
+      <style>  
+         #joystickWrapper1 {
+           pointer-events: auto;
+           position: absolute;       
+           bottom: 25px;
+           left: 0;
+           display: block; 
+           touch-action: manipulation;
+         }
+       
+         #joystickWrapper2 {
+           pointer-events: auto;
+           position: absolute;       
+           bottom: 150px;
+           right: 0;
+           display: block; 
+           touch-action: manipulation;
+         }
 
-		<iframe name="viewer"></iframe>
+         #shoot-button {
+            position: absolute;
+            bottom: 50px;
+            right: 25px;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none 1px;
+            border-radius: 50%;
+            color: rgba(255, 255, 255, 0.57);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+       </style>
+   </head>
 
-		<script>
-			var panel = document.getElementById( 'panel' );
-			var content = document.getElementById( 'content' );
-			var expandButton = document.getElementById( 'expandButton' );
-			var exitSearchButton = document.getElementById( 'exitSearchButton' );
-			var panelScrim = document.getElementById( 'panelScrim' );
-			var filterInput = document.getElementById( 'filterInput' );
-			var iframe = document.querySelector( 'iframe' );
+   <body>
+      <!-- Import maps polyfill -- Remove this when import maps will be widely supported-->
+      <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>  
+      <script type="importmap"> 
+         {"imports": {"three": "/TrabalhoCG-Mobile/build/three.module.js"}} 
+      </script>  
 
-			var pageProperties = {};
-			var titles = {};
-			var categoryElements = [];
+      <div id="webgl-output">     
+         <script type="module" src="./T3/game.js"></script>
+      </div>
 
-			var navigation;
-			
+      <!-- Joystick -->
+      <div id="joystickWrapper1"></div>
+      <div id="joystickWrapper2"></div>
+      <script src="./libs/other/nipplejs.js"></script>
 
-		</script>
+      <button id="shoot-button">Shoot</button>
 
-		<!-- Open welcome page when page starts -->
-		<script>
-			openWelcomePage();
-		</script>
+      <!-- Life Bar -->
+      <div id="lifebar-container"></div>
 
-	</body>
+      <div id="enemy-lifebars-container"></div>
+   </body>
 </html>
