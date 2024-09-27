@@ -15,19 +15,19 @@ export function setup_audio(listener, path)
 
     // shot to enemy
     const shot_enemy = new THREE.Audio(listener);
-    // audio_loader.load(path + 'shotEnemy.wav', function( buffer ) {
-    // shot_enemy.setBuffer(buffer);
-    // shot_enemy.setLoop(false);
-    // shot_enemy.setVolume(0.4);
-    // });
+    audio_loader.load('./T3/assets/sound/enemy_receive_damage.wav', function( buffer ) {
+    shot_enemy.setBuffer(buffer);
+    shot_enemy.setLoop(false);
+    shot_enemy.setVolume(1);
+    });
 
     // shot to player
     const shot_player = new THREE.Audio(listener);
-    // audio_loader.load(path + 'shotPlayer.wav', function( buffer ) {
-    // shot_player.setBuffer(buffer);
-    // shot_player.setLoop(false);
-    // shot_player.setVolume(0.6);
-    // });
+    audio_loader.load('./T3/assets/sound/player_receive_damage.wav', function( buffer ) {
+    shot_player.setBuffer(buffer);
+    shot_player.setLoop(false);
+    shot_player.setVolume(1);
+    });
 
     // shot shoot
     const shot_shoot = new THREE.Audio(listener);

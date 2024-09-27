@@ -11,7 +11,7 @@ import { collisionShotTank, collisionShotWall, collisionTankWall, collisionTankC
 import { resetCameraPosition, saveCamPosition, camMovement, camMovementMobile } from "../models/camera.js";
 import { Cannon } from "../models/cannon.js";
 import { Camera, Scene } from "../../build/three.module.js";
-import { isMobile, mobileInfo } from "../game.js";
+import { isMobile, mobileInfo, audios } from "../game.js";
 import { HealthPowerUp, StrengthPowerUp } from "../models/powerUps.js";
 
 
@@ -86,6 +86,11 @@ export function render_level2(keyboard, camera, orbit, secondaryBox)
   // orbit.enabled = true;
   cameraUpdate(keyboard, camera, orbit);
 
+  playerL2.audio_play = audios.play_sounds;
+  tank1.audio_play = audios.play_sounds;
+  tank2.audio_play = audios.play_sounds;
+  cannon.audio_play = audios.play_sounds;
+
   collisions();
 
   return level;
@@ -140,6 +145,14 @@ export function reset_level2(scene)
   tank1 = new Enemy("blue", scene, originalPositionTank1, 9, true, playerL2);
   tank2 = new Enemy("red", scene, originalPositionTank2, 7, false, playerL2);
 
+  playerL2.shot_audio = audios.shot_shoot;
+  tank1.shot_audio = audios.shot_shoot;
+  tank2.shot_audio = audios.shot_shoot;
+  cannon.shot_audio = audios.shot_shoot;
+  playerL2.receive_damage_audio = audios.shot_player;
+  tank1.receive_damage_audio = audios.shot_enemy;
+  tank2.receive_damage_audio = audios.shot_enemy;
+  
   delete_lifebars();
   createMainTankLifeBar();
   addEnemyLifeBar(tank1, 1);

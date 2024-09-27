@@ -9,7 +9,7 @@ import { levelMap } from "../models/levelMap.js";
 import { collisionShotTank, collisionShotWall, collisionTankWall, collisionTankCannon, collisionShotCannon, collisionPowerUpPlayer } from "../models/collision.js";
 import { resetCameraPosition, saveCamPosition, camMovement, camMovementMobile } from "../models/camera.js";
 import { Camera, Plane, Scene } from "../../build/three.module.js";
-import { isMobile, mobileInfo } from "../game.js";
+import { isMobile, mobileInfo, audios } from "../game.js";
 import { HealthPowerUp, StrengthPowerUp } from "../models/powerUps.js";
 
 export var playerL3;
@@ -61,6 +61,9 @@ export function render_level3(keyboard, camera, orbit, secondaryBox)
     playerL3.tankMobileControls(mobileInfo.fwdValue, mobileInfo.bkdValue, mobileInfo.lftValue, mobileInfo.rgtValue);
   playerL3.tankControls("w and up", keyboard);
   enemies.forEach(enemy => enemy.tankControls());
+
+  playerL3.audio_play = audios.play_sounds;
+  enemies.forEach(enemy => enemy.audio_play = audios.play_sounds);
 
   powerUps.forEach(powerUp => {
     powerUp.oscilate();
@@ -129,6 +132,13 @@ export function reset_level3(scene)
   enemies.push(new Enemy("red",  scene, originalPositionEnemy[0], 1, false, playerL3));
   enemies.push(new Enemy("cyan", scene, originalPositionEnemy[1], 1, false, playerL3));
   enemies.push(new Enemy("blue", scene, originalPositionEnemy[2], 1, false, playerL3));
+
+  playerL3.receive_damage_audio = audios.shot_player;
+  playerL3.shot_audio = audios.shot_shoot;
+  enemies.forEach(enemy => {
+    enemy.receive_damage_audio = audios.shot_enemy;
+    enemy.shot_audio = audios.shot_shoot;
+  });
 
   scene.add(light);
 

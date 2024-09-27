@@ -63,6 +63,10 @@ export class Cannon
         // scene.add(bb_helper);
         
         scene.add(this.object);
+        
+
+        this.shot_audio;
+        this.audio_play = true;
     }
 
     #cannon_model(scene)
@@ -271,6 +275,8 @@ export class Cannon
                 {
                     this.shots[i].shootProjectile(this.object);
                     this.timer.start();
+                    if(this.audio_play)
+                        this.shot_audio.play();
                     // console.log("shot");
                     return;
                 }

@@ -9,7 +9,7 @@ import { levelMap } from "../models/levelMap.js";
 import { collisionPowerUpPlayer, collisionShotTank, collisionShotWall, collisionTankWall } from "../models/collision.js";
 import { resetCameraPosition, saveCamPosition, camMovement, camMovementMobile } from "../models/camera.js";
 import { HealthPowerUp, PowerUp, StrengthPowerUp } from "../models/powerUps.js";
-import { isMobile, mobileInfo} from "../game.js";
+import { isMobile, mobileInfo, audios} from "../game.js";
 
 
 export var playerL1;
@@ -43,7 +43,7 @@ let level = 1;
  * @param {OrbitControls} orbit 
  * @param {InfoBox} infoBox 
  */
-export function render_level1(keyboard, camera, orbit, infoBox, secondaryBox, audios)
+export function render_level1(keyboard, camera, orbit, infoBox, secondaryBox)
 {
   gameOver(orbit);
 
@@ -67,6 +67,9 @@ export function render_level1(keyboard, camera, orbit, infoBox, secondaryBox, au
     powerUp.applyEffect(playerL1);
     powerUp.respawn(width, height);
   });
+
+  playerL1.audio_play = audios.play_sounds;
+  tank2.audio_play = audios.play_sounds;
 
   cameraUpdate(keyboard, camera, orbit);
   
@@ -111,6 +114,11 @@ export function reset_level1(scene)
   tank2 = new Enemy("red", scene, originalPositionTank2, 6, false, playerL1);
   // tank2.setUpEnemy(6, false, player);
   tank2.shotTimerLimit = 2.0;
+
+  playerL1.receive_damage_audio = audios.shot_player;
+  tank2.receive_damage_audio = audios.shot_enemy;
+  playerL1.shot_audio = audios.shot_shoot;
+  tank2.shot_audio = audios.shot_shoot;
 
   powerUps.push(new HealthPowerUp(scene, width, height));
   powerUps.push(new StrengthPowerUp(scene, width, height));

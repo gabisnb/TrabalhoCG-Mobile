@@ -67,6 +67,10 @@ export class Tank
     // this.object.add(this.virtualCube);
     this.bbHelper = new THREE.Box3Helper(this.bb, 0xffff00);
 
+    this.receive_damage_audio;
+    this.shot_audio = undefined;
+    this.audio_play = true;
+
     // Add to scene
     scene.add(this.bbHelper);
     scene.add(this.object);
@@ -95,6 +99,8 @@ export class Tank
       if(!(this.shots[i].enabled))
       {
         this.shots[i].shootProjectile(this.object);
+        if(this.audio_play)
+          this.shot_audio.play();
         return;
       }
     this.shotTimer.start();
@@ -119,6 +125,8 @@ export class Tank
       return;
     
     this.life-=damage;
+    if(this.audio_play)
+      this.receive_damage_audio.play();
     if(this.life == 0){
       this.object.position.set(0, 50, 0);
       this.isDead = true;
@@ -326,6 +334,8 @@ export class Enemy extends Tank{
         if(!(this.shots[i].enabled))
         {
           this.shots[i].shootProjectile(this.object);
+          if(this.audio_play)
+            this.shot_audio.play();
           break;
         }
       this.shotTimer.start();

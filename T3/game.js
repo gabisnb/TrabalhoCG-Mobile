@@ -41,7 +41,7 @@ var skybox = new CubeTextureLoaderSingleFile().loadSingle('./T3/assets/skybox.pn
 // audio
 const listener = new THREE.AudioListener();
 camera.add(listener);
-var audios = setup_audio(listener, "./T3/assets/sound/");
+export var audios = setup_audio(listener);
 audios.play_sounds = true;
 
 // var level_attributes = {
@@ -104,17 +104,17 @@ function render()
     switch(level)
     {
         case 1:
-            level = render_level1(keyboard, camera, orbit, infoBox, secondaryBox, audios);
+            level = render_level1(keyboard, camera, orbit, infoBox, secondaryBox);
             if(level != 1)
               reset();
             break;
         case 2:
-            level = render_level2(keyboard, camera, orbit, secondaryBox, audios);
+            level = render_level2(keyboard, camera, orbit, secondaryBox);
             if(level != 2)
               reset();
             break;
         case 3:
-            level = render_level3(keyboard, camera, orbit, secondaryBox, audios);
+            level = render_level3(keyboard, camera, orbit, secondaryBox);
             if(level != 3)
               reset();
             break;
