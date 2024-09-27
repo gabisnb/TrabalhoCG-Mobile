@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from '../../build/three.module.js';
 import { CSG } from "../../libs/other/CSGMesh.js";
 import { Shot } from './shot.js';
 import { Matrix4, Vector2 } from '../../build/three.module.js';

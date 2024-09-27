@@ -1,12 +1,12 @@
-import * as THREE from "three";
+import * as THREE from "../build/three.module.js";
 import { OrbitControls } from "../build/jsm/controls/OrbitControls.js";
-import KeyboardState from "keyboardstate";
-import {CubeTextureLoaderSingleFile} from "skymap";
+import KeyboardState from "../libs/util/KeyboardState.js";
+import {CubeTextureLoaderSingleFile} from "../libs/util/cubeTextureLoaderSingleFile.js";
 import {
     initRenderer,
     initCamera,
     SecondaryBox,
-} from "utils";
+} from "../libs/util/util.js";
 import { playerL1, render_level1, reset_level1 } from "./levels/level1.js";
 import { render_level2, reset_level2, delete_lifebars, playerL2 } from "./levels/level2.js";
 import { playerL3, render_level3, reset_level3 } from "./levels/level3.js";

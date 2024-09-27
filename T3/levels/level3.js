@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import * as THREE from "../../build/three.module.js";
 import { OrbitControls } from "../../build/jsm/controls/OrbitControls.js";
 import KeyboardState from "../../libs/util/KeyboardState.js";
 import {

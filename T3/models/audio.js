@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from '../../build/three.module.js';
 
 export function setup_audio(listener, path)
 {

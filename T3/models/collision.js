@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from '../../build/three.module.js';
 import { Tank } from './tank.js';
 import { Shot } from './shot.js';
 import { Wall } from './levelMap.js';
