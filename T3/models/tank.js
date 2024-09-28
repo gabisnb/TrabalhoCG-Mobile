@@ -72,7 +72,7 @@ export class Tank
     this.audio_play = true;
 
     // Add to scene
-    scene.add(this.bbHelper);
+    // scene.add(this.bbHelper);
     scene.add(this.object);
     scene.add(this.virtualCube);
   }

@@ -122,10 +122,10 @@ export function reset_level3(scene)
   
 
   // show movingWalls[i].bb
-  for(let i = 0; i < map.movingWalls.length; i++){
-    let helper = new THREE.Box3Helper(map.movingWalls[i].bb, 0xffff00);
-    scene.add(helper);
-  }
+  // for(let i = 0; i < map.movingWalls.length; i++){
+  //   let helper = new THREE.Box3Helper(map.movingWalls[i].bb, 0xffff00);
+  //   scene.add(helper);
+  // }
 
   playerL3 = new Player("default", scene, originalPositionPlayer);
 
