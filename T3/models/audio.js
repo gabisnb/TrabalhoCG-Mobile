@@ -9,7 +9,7 @@ export function setup_audio(listener, path)
     audio_loader.load('./T3/assets/sound/musicBackground.wav', function( buffer ) {
     music.setBuffer(buffer);
     music.setLoop(true);
-    music.setVolume(0.5);
+    music.setVolume(0.7);
     music.play();
     });
 
@@ -18,7 +18,7 @@ export function setup_audio(listener, path)
     audio_loader.load('./T3/assets/sound/enemy_receive_damage.wav', function( buffer ) {
     shot_enemy.setBuffer(buffer);
     shot_enemy.setLoop(false);
-    shot_enemy.setVolume(1);
+    shot_enemy.setVolume(0.8);
     });
 
     // shot to player
@@ -26,7 +26,7 @@ export function setup_audio(listener, path)
     audio_loader.load('./T3/assets/sound/player_receive_damage.wav', function( buffer ) {
     shot_player.setBuffer(buffer);
     shot_player.setLoop(false);
-    shot_player.setVolume(1);
+    shot_player.setVolume(1.5);
     });
 
     // shot shoot

@@ -151,8 +151,8 @@ function reset()
             player = playerL3;
             break;
         default:
-            console.log("You Win! :D");
-            //! TODO fazer tela de vitoria
+            window.location.href = "./end.html";
+            audios.music.stop();
             break;
     }
 
